@@ -1,0 +1,8 @@
+stages:
+  - deploy
+
+docker-deploy:
+  stage: deploy
+  # 执行Job内容
+  script:
+    - echo 110
