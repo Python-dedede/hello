@@ -1,0 +1,33 @@
+  # 配置模板引擎相关参数
+  spring:
+    thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      mode: HTML5
+      encoding: UTF-8
+      servlet:
+        content-type: text/html
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/config/
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      # localhost:3319 10.85.3.86:3306
+      url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: root123
+
+#      url: jdbc:mysql://localhost:3319/spread1?useUnicode=true&characterEncoding=utf8
+#      username: cmanager
+#      password: Mcloud@2019!
+
+      type: com.alibaba.druid.pool.DruidDataSource
+  # 别名
+  mybatis:
+    type-aliases-package: com.chinamcloud.bigdata.propagationApi.pojo
+    mapperLocations: classpath:mapper/*.xml
+    configuration:
+      log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+  #修改端口
+  server:
+    port: 8816
