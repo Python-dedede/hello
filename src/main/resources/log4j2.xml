@@ -2,8 +2,8 @@
 <!--设置log4j2的自身log级别为warn-->
 <configuration status="OFF">
 
-    <property name="log.base" value="logs"/>
     <appenders>
+        <property name="log.base" value="logs"/>
         <console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n" />
         </console>
