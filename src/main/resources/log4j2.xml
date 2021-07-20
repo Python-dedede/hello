@@ -2,18 +2,19 @@
 <!--设置log4j2的自身log级别为warn-->
 <configuration status="OFF">
 
+    <property name="log.base" value="logs"/>
     <appenders>
         <console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n" />
         </console>
         <!--文件会打印出所有信息，这个log每次运行程序会自动清空，由append属性决定，这个也挺有用的，适合临时测试用 -->
-        <File name="log" fileName="${sys:user.home}/logs/propagation-api/propagation-api-all.log" append="false">
+        <File name="log" fileName="${log.base}/propagation-api/propagation-api-all.log" append="false">
             <PatternLayout
                     pattern="%d{yyyy-MM-dd HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n" />
         </File>
 
 
-        <RollingFile name="RollingFileInfo" fileName="${sys:user.home}/logs/propagation-api/info.log"
+        <RollingFile name="RollingFileInfo" fileName="${log.base}/propagation-api/info.log"
                      filePattern="logs_history/$${date:yyyy-MM}/propagation-api-info-%d{MM-dd-yyyy}-%i.log.gz">
             <Filters>
                 <ThresholdFilter level="INFO"/>
@@ -26,7 +27,7 @@
             </Policies>
         </RollingFile>
 
-        <RollingFile name="RollingFileWarn" fileName="${sys:user.home}/logs/propagation-api/warn.log"
+        <RollingFile name="RollingFileWarn" fileName="${log.base}/propagation-api/warn.log"
                      filePattern="logs_history/$${date:yyyy-MM}/propagation-api-warn-%d{MM-dd-yyyy}-%i.log.gz">
             <Filters>
                 <ThresholdFilter level="WARN"/>
@@ -39,7 +40,7 @@
             </Policies>
         </RollingFile>
 
-        <RollingFile name="RollingFileError" fileName="${sys:user.home}/logs/propagation-api/error.log"
+        <RollingFile name="RollingFileError" fileName="${log.base}/propagation-api/error.log"
                      filePattern="logs_history/$${date:yyyy-MM}/propagation-api-error-%d{MM-dd-yyyy}-%i.log.gz">
             <ThresholdFilter level="ERROR"/>
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
