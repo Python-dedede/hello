@@ -8,27 +8,31 @@
     <formats>
         <format>dir</format>
     </formats>
+
+
     <fileSets>
-    <fileSet>
-      <outputDirectory>conf/mapper</outputDirectory>
-      <directory>${project.basedir}/src/main/resources/mapper/</directory>
-        <includes>
-            <include>*.xml</include>
-        </includes>
-    </fileSet>
-    <fileSet>
-      <outputDirectory>conf</outputDirectory>
-      <directory>${project.basedir}/src/main/resources/</directory>
-      <includes>
-      	<include>application.yml</include>
-      	<include>log4j2.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet>
-      <outputDirectory>bin</outputDirectory>
-      <directory>${project.basedir}/bin</directory>
-    </fileSet>
-  	</fileSets>
+        <fileSet>
+            <outputDirectory>conf/mapper</outputDirectory>
+            <directory>${project.basedir}/src/main/resources/mapper/</directory>
+            <includes>
+                <include>*.xml</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>conf</outputDirectory>
+            <directory>${project.basedir}/src/main/resources/</directory>
+            <includes>
+                <include>application.yml</include>
+                <include>log4j2.xml</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>bin</outputDirectory>
+            <directory>${project.basedir}/bin</directory>
+        </fileSet>
+    </fileSets>
 
     <dependencySets>
         <dependencySet>
