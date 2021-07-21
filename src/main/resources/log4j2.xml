@@ -3,8 +3,6 @@
 <configuration status="OFF">
 
     <appenders>
-        <Property name="log-path">log4j2_log_path.properties.log_path</Property>
-        
         <console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n" />
         </console>
